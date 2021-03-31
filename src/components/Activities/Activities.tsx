@@ -47,11 +47,12 @@ const Activities = () => {
     setActivities(activitiesNew);
   };
 
-  const handlerActiveDisactive = (indexActiveDisactive: number) => {
+  const handlerActiveDisactive = (indexActiveDisactive: number, time: number) => {
     const activitiesNew = activities.map((item, index) => {
       if (index === indexActiveDisactive) {
         item.active = !item.active;
         item.updateTime = Date.now();
+        item.time = time;
       }
       return item;
     });

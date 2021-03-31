@@ -18,11 +18,9 @@ const Activity: React.FC<ActivityProps> = ({
   width,
   time,
 }) => {
-  console.log(time);
   const { timeStopwatch, play, stop } = useInterval(active, time);
 
   const secondsToHms = (seconds: number): string => {
-
     const h = Math.floor(seconds / 3600);
     const m = Math.floor((seconds % 3600) / 60);
     const s = Math.floor((seconds % 3600) % 60);
@@ -67,7 +65,7 @@ const Activity: React.FC<ActivityProps> = ({
               style={{ cursor: "pointer" }}
               onClick={() => {
                 stop();
-                onActiveDisactive(index);
+                onActiveDisactive(index, timeStopwatch);
               }}
             />
           ) : (
@@ -77,7 +75,7 @@ const Activity: React.FC<ActivityProps> = ({
               style={{ cursor: "pointer" }}
               onClick={() => {
                 play();
-                onActiveDisactive(index);
+                onActiveDisactive(index, timeStopwatch);
               }}
             />
           )}

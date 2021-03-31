@@ -17,6 +17,6 @@ export interface AddActivityProps {
 
 export interface ActivityProps extends ActivityStyleProps, ActivitiesObject {
   onRemove: (indexRemoveElement: number) => void;
-  onActiveDisactive: (indexActiveDisactive: number) => void;
+  onActiveDisactive: (indexActiveDisactive: number, time: number) => void;
   width: number;
 }
